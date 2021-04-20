@@ -2,7 +2,7 @@
   <arg name="localization"      default="false"/>
   <arg name="wait_for_transform"  default="0.2"/> 
   <arg name="database_path"     default="rtabmap.db"/>
-  <arg     if="$(arg localization)" name="args"  default=""/>
+  <arg if="$(arg localization)" name="args"  default=""/>
   <arg unless="$(arg localization)" name="args"  default="--delete_db_on_start"/>
   <arg name="planner"  default="dwa" doc="opt: dwa, teb"/> 
   <arg name="move_forward_only" default="true"/>
