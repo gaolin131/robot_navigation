@@ -1,0 +1,39 @@
+#整体筛选器的参数配置
+use_map_topic: tree                       #当设置为tree时AMCL会订阅地图主题
+frist_map_only: flase                     #当设置为flase时，会更新地图
+gui_publish_rate: 10.0                    #发布扫描和路径进行可视化的最大速率
+min_particles: 2000                       #允许最小粒子数量
+max_particles: 5000                       #允许最大粒子数量
+kld_err: 0.05                             #真实分布与估计分布之间的最大误差
+kld_z: 0.99                               #（1-P）上的标准正常量子，p是估计将错误小于kld_err
+update_min_d: 0.25                        #在执行筛选器更新之前需要转换运动
+update_min_a: 0.2                         #在执行筛选器更新之前需要旋转运动
+resample_interval: 1                      #重新采样前所需的所需的筛选器更新数量
+transform_tolerance: 2.0                  #发布转换日期的时间，以表明此转换对未来有效
+recovery_alpha_slow: 0.0                  #慢平均重量过滤器的指数衰减率，用于通过添加随机姿势来决定何时恢复
+recovery_alpha_fast: 0.0                  #快平均重量过滤器的指数衰减率，用于通过添加随机姿势来决定何时恢复
+save_pose_rate: 0.5                       #将最后估计姿势和共价存储到参数服务器的最大速率
+#里程计模型参数   
+odom_frame_id: "odom"                     #用于里程信息测量的id
+base_frame_id: "base_footprint"           #机器人底座id
+global_frame_id: "map"                    #本地化系统发布的坐标框架名称
+odom_model_type: "diff"                   #里程计模式型号
+odom_alpha5: 0.1                          #与翻译有关的噪声参数
+odom_alpha1: 0.2                          #从机器人运动的旋转组建中指定信息测量的旋转评估的预计噪声
+odom_alpha2: 0.2                          #从机器人运动的转化组建中指定信息测量的旋转评估的预计噪声
+odom_alpha3: 0.2                          #从机器人运动的旋转组建中指定信息测量的翻动评估的预计噪声
+odom_alpha4: 0.2                          #从机器人运动的转化组建中指定信息测量的翻动评估的预计噪声
+tf_broadcast: tree                        #设置为tree，可用于后面的全局规划以及局部规划
+#激光模型参数
+laser_z_hit: 0.5                          #模型z_hit部分的混合物重量
+aser_z_short: 0.05                        #模型z_short部分的混合物重量
+laser_z_max: 0.05                         #模型z_max部分的混合物重量
+laser_z_rand: 0.5                         #模型z_rand部分的混合物重量
+laser_sigma_hit: 0.2                      #z_hit部分模型使用高斯模型的标准偏差
+laser_lambda_short: 0.1                   #z_short部分的指数衰变参数
+laser_model_type: "likelihood_field"      #使用哪种型号
+laser_likelihood_max_dist: 2.0            #在地图上作障碍膨胀的最大距离
+laser_min_range: -1.0                     #最小扫描范围
+laser_max_beams: 60                       #更新滤镜时，每次扫描中要使用多少均匀间隔的光束
+laser_max_range: -1.0                     #最大扫描范围
+tf_broadcast: tree
