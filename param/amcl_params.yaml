@@ -1,6 +1,6 @@
 #整体筛选器的参数配置
-use_map_topic: tree                       #当设置为tree时AMCL会订阅地图主题
-frist_map_only: flase                     #当设置为flase时，会更新地图
+use_map_topic: true                       #当设置为tree时AMCL会订阅地图主题
+frist_map_only: false                     #当设置为flase时，会更新地图
 gui_publish_rate: 10.0                    #发布扫描和路径进行可视化的最大速率
 min_particles: 2000                       #允许最小粒子数量
 max_particles: 5000                       #允许最大粒子数量
@@ -23,7 +23,7 @@ odom_alpha1: 0.2                          #从机器人运动的旋转组建中�
 odom_alpha2: 0.2                          #从机器人运动的转化组建中指定信息测量的旋转评估的预计噪声
 odom_alpha3: 0.2                          #从机器人运动的旋转组建中指定信息测量的翻动评估的预计噪声
 odom_alpha4: 0.2                          #从机器人运动的转化组建中指定信息测量的翻动评估的预计噪声
-tf_broadcast: tree                        #设置为tree，可用于后面的全局规划以及局部规划
+tf_broadcast: true                    #设置为tree，可用于后面的全局规划以及局部规划
 #激光模型参数
 laser_z_hit: 0.5                          #模型z_hit部分的混合物重量
 aser_z_short: 0.05                        #模型z_short部分的混合物重量
@@ -36,4 +36,4 @@ laser_likelihood_max_dist: 2.0            #在地图上作障碍膨胀的最大�
 laser_min_range: -1.0                     #最小扫描范围
 laser_max_beams: 60                       #更新滤镜时，每次扫描中要使用多少均匀间隔的光束
 laser_max_range: -1.0                     #最大扫描范围
-tf_broadcast: tree
+tf_broadcast: true
