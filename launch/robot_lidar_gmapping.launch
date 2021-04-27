@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find base_control)/launch/base_control.launch">
+    </include>
+    <include file="$(find robot_navigation)/launch/lidar.launch">
+    </include>
+    <include file="$(find robot_navigation)/launch/includes/gmapping.launch">
+    </include>
+</launch>
