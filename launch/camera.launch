@@ -1,5 +1,5 @@
 <launch>
-    <include file="$(find robot_navigation)/launch/camera/$(arg camera_type).launch"/>
+    <include file="$(find robot_navigation)/launch/camera/astrapro.launch"/>
             <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_camera"
                 args="0.140 0.0 0.093 0 0.0 0.0 base_footprint camera_link 20">
             </node>
