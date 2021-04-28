@@ -1,5 +1,5 @@
 <launch>
-    <include file="$(find robot_navigation)/launch/lidar/$(arg lidar_type).launch">
+    <include file="$(find robot_navigation)/launch/lidar/rplidar.launch">
         <arg name="lidar_frame"            value="base_laser_link"/>
     </include>
     <node pkg="tf" type="static_transform_publisher" name="base_footprint_to_laser"
